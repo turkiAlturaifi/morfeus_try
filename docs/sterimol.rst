@@ -13,21 +13,45 @@ Module
 
 The Sterimol class calculates and stores Sterimol parameters.
 
-.. code-block:: python
-  :caption: Example
+.. tab:: Example
 
-  >>> from morfeus import Sterimol, read_xyz
-  >>> elements, coordinates = read_xyz("tBu.xyz")
-  >>> sterimol = Sterimol(elements, coordinates, 1, 2)
-  >>> sterimol.L_value
-  4.209831193078874
-  >>> sterimol.B_1_value
-  2.8650676183152837
-  >>> sterimol.B_5_value
-  3.26903261263369
-  >>> sterimol.print_report()
-  L         B_1       B_5
-  4.21      2.87      3.27
+  .. code-block:: python
+
+    from morfeus import Sterimol, read_xyz
+    elements, coordinates = read_xyz("tBu.xyz")
+    sterimol = Sterimol(elements, coordinates, 1, 2)
+    
+    sterimol.L_value
+    # Output: 4.209831193078874
+    sterimol.B_1_value
+    # Output: 2.8650676183152837
+    sterimol.B_5_value
+    # Output: 3.26903261263369
+    sterimol.print_report()
+    # Output: 
+    # L         B_1       B_5
+    # 4.21      2.87      3.27
+
+.. tab:: tBu.xyz
+
+    .. code-block:: python
+
+    14
+
+    H          1.23147        0.86721       -0.00000
+    C          0.33332        0.23213       -0.00000
+    C         -0.92408        1.12702        0.00000
+    H         -1.82223        0.49194        0.00000
+    H         -0.92816        1.75633        0.89803
+    H         -0.92816        1.75633       -0.89803
+    C          0.33332       -0.65122       -1.25865
+    H         -0.56482       -1.28630       -1.25865
+    H          0.32924       -0.02191       -2.15668
+    H          1.23147       -1.29785       -1.25865
+    C          0.33332       -0.65122        1.25865
+    H         -0.56482       -1.28630        1.25865
+    H          1.23147       -1.29785        1.25865
+    H          0.32924       -0.02191        2.15668
 
 Radii can be changed with the argument ``radii_type=<str>`` and custom radii
 can be supplied as a list with ``radii=<list>``.
